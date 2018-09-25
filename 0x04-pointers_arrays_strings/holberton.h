@@ -9,11 +9,8 @@ int _isalpha(int c);
 int print_sign(int n);
 int _abs(int);
 int print_last_digit(int);
-<<<<<<< HEAD
 void jack_bauer(void);
-=======
 void reset_to_98(int *n);void jack_bauer(void);
->>>>>>> db425be27f4f46b53766c98920d447fbfec9f67f
 void times_table(void);
 int add(int, int);
 void print_to_98(int n);
@@ -28,15 +25,12 @@ void print_diagonal(int n);
 void print_square(int size);
 void print_triangle(int size);
 void reset_to_98(int *n);
-<<<<<<< HEAD
 void swap_int(int *a, int *b);
 int _strlen(char *s);
 void _puts(char *str);
-=======
 void _puts(char *str);
 void swap_int(int *a, int *b);
 int _strlen(char *s);
->>>>>>> db425be27f4f46b53766c98920d447fbfec9f67f
 void print_rev(char *s);
 void rev_string(char *s);
 void puts2(char *str);
@@ -45,8 +39,3 @@ void print_array(int *a, int n);
 char *_strcpy(char *dest, char *src);
 
 #endif /* _HOLBERTON_H_ */
-<<<<<<< HEAD
-
-
-=======
->>>>>>> db425be27f4f46b53766c98920d447fbfec9f67f

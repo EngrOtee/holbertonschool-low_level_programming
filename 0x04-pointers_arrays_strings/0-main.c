@@ -8,7 +8,6 @@
  */
 int main(void)
 {
-<<<<<<< HEAD
   int n;
 
   n = 402;
@@ -16,7 +15,7 @@ int main(void)
   reset_to_98(&n);
   printf("n=%d\n", n);
   return (0);
-=======
+
 	int n;
 
 	n = 402;
@@ -24,5 +23,4 @@ int main(void)
 	reset_to_98(&n);
 	printf("n=%d\n", n);
 	return (0);
->>>>>>> db425be27f4f46b53766c98920d447fbfec9f67f
 }

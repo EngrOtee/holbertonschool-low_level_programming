@@ -2,8 +2,9 @@
 #include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
- *
+ * *_strchr - locates a character in a string
+ * @s: pointer
+ *@c: character
  * Return: a pointer
  */
 

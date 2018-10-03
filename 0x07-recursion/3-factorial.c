@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * factorial - returns the factorial of a number
+ *@n: integer being tested
+ * Return: the factorial of a number
  */
 
 int factorial(int n)

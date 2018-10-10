@@ -3,51 +3,32 @@
 #include <stdlib.h>
 
 /**
- * _strlen - returns the length of the string
- * @s: input string to count
+ * str_concat - concatenates two strings
  *
- * Return: length of string as int
- **/
-int _strlen(char *s)
-{
-	int i;
+ * Return: Always 0.
+ */
 
-	for (i = 0; s[i] != '\0'; i++)
-		;
-	return (i + 1);
-}
-/**
- * str_concat - concatenate two strings
- * @s1: first string
- * @s2: second string
- *
- * Return: pointer to string, NULL if fails
- *
- **/
 char *str_concat(char *s1, char *s2)
 {
-	char *dest;
-	unsigned int i, j;
-
-	if (s1 == NULL)
-		s1 = "";
-	i = _strlen(s1);
-
-	if (s2 == NULL)
-		s2 = "";
-	j = _strlen(s2);
-
-	dest = (char *)malloc((i + j - 1) * sizeof(char));
-
-	if (dest == NULL)
-		return (NULL);
+	int i, j, size;
+	char *a;
 
 	for (i = 0; s1[i] != '\0'; i++)
-		dest[i] = s1[i];
-
+		;
 	for (j = 0; s2[j] != '\0'; j++)
-		dest[i + j] = s2[j];
+		;
+	size = i + j + 1;
+	a = malloc(sizeof(char) * size);
+	if (a == 0)
+		return (NULL);
+	for (i = 0; s1[i] != '\0'; i++)
+	{
+		*(a + i) = *(s1 + i);
+	}
+	for (j = 0; s2[j] != '\0'; j++)
+	{
+		*(a + i + j) = *(s2 + j);
+	}
 
-	dest[i + j] = s2[j];
-	return (dest);
+	return (a);
 }

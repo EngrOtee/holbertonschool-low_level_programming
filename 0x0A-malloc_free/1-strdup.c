@@ -3,42 +3,24 @@
 #include <stdlib.h>
 
 /**
- * _length - finds the length of the string
- *@s: number of characters in the string
- * Return: Always 0.
- */
-
-int _length(char *s)
-{
-	unsigned int i;
-
-	for (i = 0; i < '\0'; i++)
-		;
-	return (i + 1);
-}
-
-/**
- * _strdup - returns a pointer to a new string which is a duplicate
- *@str: the string
+ * _strdup - returns a pointer to a newly allocated space in memory
+ *@str: string being allocated in memory
  * Return: Always 0.
  */
 
 char *_strdup(char *str)
 {
-	char *dest;
-	unsigned int i;
+	int i, str_len;
+	char *dupe;
 
 	if (str == NULL)
 		return (NULL);
-
-	else
-		dest = malloc((_length(str) * sizeof(char));
-			      if (dest == NULL)
-				      return (NULL);
-
-			      for (i = 0; str[i] != '\0'; i++)
-				      dest[i] = str[i];
-
-			      dest[i] = str[i];
-			      return (dest);
+	for (str_len = 0; str[str_len] != '\0'; str_len++)
+		;
+	dupe = malloc(sizeof(char) * str_len + 1);
+	if (dupe == NULL)
+		return (NULL);
+	for (i = 0; i < str_len; i++)
+		dupe[i] = str[i];
+	return (dupe);
 }

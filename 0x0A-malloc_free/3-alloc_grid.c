@@ -25,14 +25,15 @@ int **alloc_grid(int width, int height)
 	{
 		twoD[x] = malloc(sizeof(char) * width);
 		if (twoD[x] == NULL)
-			for (; x >= 0; x -= 1)
+		{
+			for (; x >= 0; x--)
 			{
 				free(twoD[x]);
-				free(twoD);
 			}
-	}
-	for (x = 0; x < height; x++)
-	{
+		free(twoD);
+		return (NULL);
+		}
+
 		for (y = 0; y < width; y++)
 			twoD[x][y] = 0;
 	}

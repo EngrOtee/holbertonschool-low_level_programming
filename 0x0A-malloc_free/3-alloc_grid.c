@@ -20,20 +20,21 @@ int **alloc_grid(int width, int height)
 	twoD = malloc(sizeof(int *) * height);
 	if (twoD == NULL)
 		return (NULL);
-
 	for (x = 0; x < height; x++)
 	{
-		twoD[x] = malloc(sizeof(int *) * width);
+		twoD[x] = malloc(sizeof(int) * width);
 		if (twoD[x] == NULL)
 		{
-			for (; x >= 0; x--)
+			for ( ; x >= 0; x--)
 			{
 				free(twoD[x]);
 			}
 		free(twoD);
 		return (NULL);
 		}
-
+	}
+	for (x = 0; x < height; x++)
+	{
 		for (y = 0; y < width; y++)
 			twoD[x][y] = 0;
 	}

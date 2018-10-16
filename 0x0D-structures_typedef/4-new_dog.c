@@ -34,7 +34,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	a->owner = _strdup(owner);
 	if (a->owner == NULL)
 	{
-	     	free(a->name);
+		free(a->name);
 		free(a);
 		return (NULL);
 	}
@@ -55,13 +55,23 @@ char *_strdup(char *str)
 	char *dupe;
 
 	if (str == NULL)
+	{
 		return (NULL);
+	}
 	for (str_len = 0; str[str_len] != '\0'; str_len++)
 		;
 	dupe = malloc(sizeof(char) * str_len + 1);
 	if (dupe == NULL)
+	{
 		return (NULL);
-	for (i = 0; i < str_len; i++)
+	}
+
+	str_len = 0;
+	while (str[str_len] != '\0')
+	{
 		dupe[i] = str[i];
+		str_len++;
+	}
+	dupe[str_len] = '\0';
 	return (dupe);
 }

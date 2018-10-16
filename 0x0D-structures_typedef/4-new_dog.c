@@ -21,10 +21,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog = malloc(sizeof(dog_t));
 
 	if (dog == NULL)
+	{
 		return (NULL);
+	}
 	dog->name = _strdup(name);
 	if (dog->name == NULL)
+	{
 		free(dog);
+		return (NULL);
+	}
 	dog->age = age;
 	dog->owner = _strdup(owner);
 		if (dog->owner == NULL)
@@ -59,23 +64,4 @@ char *_strdup(char *str)
 	for (i = 0; i < str_len; i++)
 		dupe[i] = str[i];
 	return (dupe);
-}
-
-/**
- * _strlen - returns the length of the string
- *@s: string being counted
- * Return: Always 0.
- */
-
-int str_len(char *s)
-{
-	int i;
-
-	i = 0;
-	while (*s != '\0')
-	{
-		i++;
-		s++;
-	}
-	return (i);
 }

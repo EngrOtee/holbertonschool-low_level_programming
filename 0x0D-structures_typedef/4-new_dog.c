@@ -2,7 +2,6 @@
 #include "dog.h"
 #include <stdlib.h>
 char *_strdup(char *str);
-int str_len(char *s);
 /**
  * new_dog - creates a new dog object
  *@name: name of dog

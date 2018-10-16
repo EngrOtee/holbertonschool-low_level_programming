@@ -1,76 +1,93 @@
 #include <stdio.h>
-#include "dog.h"
 #include <stdlib.h>
+#include "dog.h"
+
 char *_strdup(char *str);
+
 /**
- * new_dog - creates a new dog object
- *@name: name of dog
- *@age: age of dog
- *@owner: owner of dog
- * Return: Dog, NULL if function fails
+ * new_dog - a function that creates a new dog
+ * @name: the of name of the  dog
+ * @age: the age of the dog
+ * @owner: the owner of the dog
+ *
+ * Return: a pointer to the new dog or NULL if failed
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *a = NULL;
+	dog_t *p = NULL;
 
 	if (name == NULL || owner == NULL)
+	{
 		return (NULL);
+	}
 
-	a = malloc(sizeof(dog_t));
+	p = malloc(sizeof(dog_t));
 
-	if (a == NULL)
+	if (p == NULL)
 	{
 		return (NULL);
 	}
-	a->name = _strdup(name);
-	if (a->name == NULL)
+
+	p->name = _strdup(name);
+
+	if (p->name == NULL)
 	{
-		free(a);
+		free(p);
 		return (NULL);
 	}
-	a->age = age;
-	a->owner = _strdup(owner);
-	if (a->owner == NULL)
+
+	p->age = age;
+	p->owner = _strdup(owner);
+
+	if (p->owner == NULL)
 	{
-		free(a->name);
-		free(a);
+		free(p->name);
+		free(p);
 		return (NULL);
 	}
-	return (a);
+	return (p);
 }
 
 
-
 /**
- * _strdup - returns a pointer to a newly allocated space in memory
- *@str: string being allocated in memory
- * Return: Always 0.
+ * _strdup - a function that returns a pointer to a newly
+ * allocated space in memory, that is a duplicate of the string
+ * str
+ * @str: the string
+ *
+ * Return: The pointer to the duplicated string
  */
 
 char *_strdup(char *str)
 {
-	int i, str_len;
-	char *dupe;
+	char *ptr;
+	int len;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	for (str_len = 0; str[str_len] != '\0'; str_len++)
-		;
-	dupe = malloc(sizeof(char) * str_len + 1);
-	if (dupe == NULL)
+
+	len = 0;
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+
+	ptr = malloc(sizeof(char) * len + 1);
+
+	if (ptr == NULL)
 	{
 		return (NULL);
 	}
 
-	str_len = 0;
-	while (str[str_len] != '\0')
+	len = 0;
+	while (str[len] != '\0')
 	{
-		dupe[i] = str[i];
-		str_len++;
+		ptr[len] = str[len];
+		len++;
 	}
-	dupe[str_len] = '\0';
-	return (dupe);
+	ptr[len] = '\0';
+	return (ptr);
 }

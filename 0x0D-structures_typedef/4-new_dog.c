@@ -13,32 +13,32 @@ int str_len(char *s);
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dog = NULL;
+	dog_t *a = NULL;
 
 	if (name == NULL || owner == NULL)
 		return (NULL);
 
-	dog = malloc(sizeof(dog_t));
+	a = malloc(sizeof(dog_t));
 
-	if (dog == NULL)
+	if (a == NULL)
 	{
 		return (NULL);
 	}
-	dog->name = _strdup(name);
-	if (dog->name == NULL)
+	a->name = _strdup(name);
+	if (a->name == NULL)
 	{
-		free(dog);
+		free(a);
 		return (NULL);
 	}
-	dog->age = age;
-	dog->owner = _strdup(owner);
-		if (dog->owner == NULL)
+	a->age = age;
+	a->owner = _strdup(owner);
+		if (a->owner == NULL)
 		{
-			free(dog->name);
-			free(dog);
+			free(a->name);
+			free(a);
 			return (NULL);
 		}
-	return (dog);
+	return (a);
 }
 
 

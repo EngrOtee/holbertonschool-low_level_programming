@@ -61,9 +61,9 @@ void print_s(va_list ap)
 
 void print_all(const char * const format, ...)
 {
-        char *separator = "";
-        int i, k;
-        va_list ap;
+	char *separator = "";
+	int i, k;
+	va_list ap;
 
 	print_t list[] = {
 		{"c",  print_char},
@@ -75,7 +75,7 @@ void print_all(const char * const format, ...)
 
 	va_start(ap, format);
 	i = 0;
-	while (format[i] != '\0')
+	while ((format[i] != '\0') && (format != NULL))
 	{
 		k = 0;
 		while (list[k].name != NULL)
@@ -89,6 +89,7 @@ void print_all(const char * const format, ...)
 			k++;
 		}
 		i++;
+		k = 0;
 	}
 	printf("\n");
 	va_end(ap);

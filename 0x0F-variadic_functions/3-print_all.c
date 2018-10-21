@@ -49,9 +49,8 @@ void print_s(va_list ap)
 	s = va_arg(ap, char *);
 
 	if (s  == NULL)
-		printf("(nil)");
-	else
-		printf("%s", s);
+		s = ("(nil)");
+	printf("%s", s);
 }
 /**
  * print_all - Prints anything

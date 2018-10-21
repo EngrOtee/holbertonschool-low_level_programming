@@ -61,6 +61,10 @@ void print_s(va_list ap)
 
 void print_all(const char * const format, ...)
 {
+        char *separator = "";
+        int i, k;
+        va_list ap;
+
 	print_t list[] = {
 		{"c",  print_char},
 		{"i", print_integer},
@@ -68,10 +72,6 @@ void print_all(const char * const format, ...)
 		{"s", print_s},
 		{NULL, NULL},
 	};
-
-	char *separator = "";
-	int i, k;
-	va_list ap;
 
 	va_start(ap, format);
 	i = 0;

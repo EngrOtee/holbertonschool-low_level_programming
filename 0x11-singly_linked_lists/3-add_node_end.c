@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * add_node - Adds a new node at the end of the list
+ * add_node_end - Adds a new node at the end of the list
  * @head: pointer to a pointer to a linked list
  * @str: Pointer for a string input
  * Return: the address of the new element, or NULL if it failed

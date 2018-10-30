@@ -4,9 +4,9 @@
 #include "lists.h"
 
 /**
- * add_node - Adds a new node at the beginning of the list
+ * add_nodeint - Adds a new node at the beginning of the list
  * @head: pointer to a pointer to a linked list
- * @str: Pointer for a string input
+ * @n: constant for integer input
  * Return: the address of the new element, or NULL if it failed
  */
 

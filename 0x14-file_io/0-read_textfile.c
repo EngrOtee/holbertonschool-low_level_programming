@@ -12,27 +12,20 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int writebuff, readbuff, fd;
 	char *buffptr;
 
-	buffptr = malloc(sizeof(char) * (letters + 1));
-	if (buffptr == NULL)
-		return (0);
 	if (filename == NULL)
+		return (0);
+	buffptr = malloc(sizeof(char) * letters);
+	if (buffptr == NULL)
 		return (0);
 	fd = open(filename, O_RDWR);
 	if (fd == -1)
-	{
 		return (0);
-	}
 	readbuff =  read(fd, buffptr, letters);
 	if (readbuff == -1)
-	{
 		return (0);
-	}
-	buffptr[letters] = '\0';
 	writebuff = write(STDOUT_FILENO, buffptr, letters);
 	if (writebuff == -1)
-	{
 		return (0);
-	}
 	close(fd);
 	free(buffptr);
 	return (writebuff);
